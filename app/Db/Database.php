@@ -105,4 +105,22 @@ class Database{
         return $this->conn->lastInsertId();
     }
 
+    /**
+     * Método responsável por executar uma consulta no dados no banco
+     * @param string $where
+     * @param string $order
+     * @return PDOStatement 
+     */
+    public function select($where = null, $order = null){
+        //dados da query
+        $where = strlen($where) ? 'WHERE' . $where: '';
+        $order = strlen($order) ? 'ORDER BY' . $order: '';
+
+        //monta a query
+        $query = 'SELECT * FROM '.$this->table.' '.$where.' '.$order;
+
+        //executa a query
+        return $this->execute($query);
+    }
+
 }

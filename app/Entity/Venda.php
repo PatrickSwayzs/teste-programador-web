@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Db\Database;
+use PDO;
 
 class Venda {
 
@@ -98,5 +99,16 @@ class Venda {
 
         //Retornar sucesso
         return true;
+    }
+
+    /**
+     * Método responsável por obter as vagas do banco de dados
+     * @param string $where
+     * @param string $order 
+     * @return array
+     */
+    public static function getVendas($where = null, $order = null){
+        return (new Database('vendas'))->select($where,$order)
+                                       ->fetchAll(PDO::FETCH_CLASS, self::class);
     }
 }

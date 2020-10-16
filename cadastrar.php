@@ -11,6 +11,7 @@ $_POST['cidade'], $_POST['bairro'], $_POST['rua'], $_POST['data'])){
     $obVenda->fornecedores  = $_POST['fornecedores'];
     $obVenda->produtos      = $_POST['produtos'];
     $obVenda->precos        = $_POST['precos'];
+    $obVenda->precoTotal    += $_POST['precos'];
     $obVenda->cep           = $_POST['cep'];
     $obVenda->uf            = $_POST['uf'];
     $obVenda->cidade        = $_POST['cidade'];
