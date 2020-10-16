@@ -1,3 +1,17 @@
+<?php
+function get_endereco($cep)
+{
+
+
+    // formatar o cep removendo caracteres nao numericos
+    $cep = preg_replace("/[^0-9]/", "", $cep);
+    $url = "http://viacep.com.br/ws/$cep/xml/";
+
+    $xml = simplexml_load_file($url);
+    return $xml;
+}
+?>
+
 <main>
     <section>
         <a href="index.php">
@@ -13,7 +27,7 @@
                 <label>Fornecedor</label>
                 <select class="form-control" name="fornecedores[]">
                     <option selected="" disabled="">Selecione</option>
-                    <option></option>
+                    <option value="teste">teste</option>
                 </select>
             </div>
 
@@ -21,15 +35,22 @@
                 <label>Produto</label>
                 <select class="form-control" name="produtos">
                     <option selected="" disabled="">Selecione Fornecedor Primeiro</option>
+                    <option value="teste">teste</option>
                 </select>
             </div>
 
             <div class="form-group col-sm">
                 <label>Preço</label>
-                <input type="text" class="form-control" name="preco">
+                <input type="text" class="form-control" name="precos[]">
             </div>
         </div>
         <div class="row">
+
+            <div class="form-group col-sm">
+                <label>CEP</label>
+                <input type="text" class="form-control" name="cep">
+            </div>
+
             <div class="form-group col-sm">
                 <label>UF</label>
                 <input type="text" class="form-control" name="uf">
@@ -50,7 +71,6 @@
                 <label>Rua</label>
                 <input type="text" class="form-control" name="rua">
             </div>
-
             <div class="form-group col-sm">
                 <label>Data</label>
                 <input type="date" class="form-control" name="data">
