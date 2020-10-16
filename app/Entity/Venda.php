@@ -82,9 +82,21 @@ class Venda {
         
         //Inserir venda no banco
         $obDatabase = new Database('vendas');
-        echo "<pre>"; print_r($obDatabase); echo "</pre>"; exit;
-        //Atribuir o id da vaga na instancia
+        $this->id = $obDatabase->insert([
+            'produtos' => $this->produtos,
+            'fornecedores' => $this->fornecedores,
+            'precos' => $this->precos,
+            'precoTotal' => $this->precoTotal,
+            'cep' => $this->cep,
+            'uf' => $this->uf,
+            'cidade' => $this->cidade,
+            'bairro' => $this->bairro,
+            'rua' => $this->rua,
+            'data' => $this->data
+            ]);
+
 
         //Retornar sucesso
+        return true;
     }
 }

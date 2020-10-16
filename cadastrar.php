@@ -19,6 +19,9 @@ $_POST['cidade'], $_POST['bairro'], $_POST['rua'], $_POST['data'])){
     $obVenda->data          = $_POST['data'];
     $obVenda->cadastrar();
     //echo "<pre>"; print_r($obVenda); echo "</pre>"; exit;
+
+    header('location: index.php?status=success');
+    exit;
 }
 
 include __DIR__.'/includes/header.php';

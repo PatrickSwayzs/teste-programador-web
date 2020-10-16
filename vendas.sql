@@ -1,17 +1,17 @@
 
 Create Table produtos (
-    id integer primary key,
+    id integer primary key AUTO_INCREMENT,
 	nome varchar(255) not null,
 	referencia varchar(255) unique not null,
 	preco varchar(255) not null
 );
 
 Create Table fornecedores (
-    id integer primary key,
+    id integer primary key AUTO_INCREMENT,
 	nome varchar(255) not null
 );
 Create Table produtos_fornecedores (
-    id integer primary key,
+    id integer primary key AUTO_INCREMENT,
 	produtos_id integer,
 	fornecedores_id integer,
 	FOREIGN KEY (produtos_id) REFERENCES produtos(id),
@@ -19,10 +19,10 @@ Create Table produtos_fornecedores (
 );
 
 Create Table vendas (
-    id integer primary key,
+    id integer primary key AUTO_INCREMENT,
 	produtos text,
 	fornecedores text,
-	preco text,
+	precos text,
 	precoTotal varchar(255) not null,
 	cep varchar(255) not null,
 	uf varchar(255) not null, 

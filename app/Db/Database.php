@@ -2,6 +2,8 @@
 
 namespace App\Db;
 use\PDO;
+use \PDOException;
+use PDOStatement;
 
 class Database{
 
@@ -65,5 +67,42 @@ class Database{
         }
     }
 
+    /**
+     * Método responsável por executar queries dentro do banco de dados
+     * @param string $query
+     * @param array $params
+     * @return PDOStatement
+     */
+    public function execute($query, $param = []){
+        try {
+            $statement = $this->conn->prepare($query);
+            $statement->execute($param);
+            return $statement;
+
+        } catch (\PDOException $e) {
+            die('ERRO: ' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Método responsável por inserir dados no banco
+     * @param array $values [field => value]
+     * @return integer Id inserido
+     */
+    public function insert($values){
+
+        //dados da query
+        $fields = array_keys($values);
+        $binds = array_pad([], count($fields), '?');
+        
+        //query montada
+        $query = 'INSERT INTO '.$this->table.' ('.implode(',',$fields). ') VALUES ('.implode(',',$binds).')';
+        
+        //executa o insert
+        $this->execute($query, array_values($values));
+
+        //retorna o id inserido
+        return $this->conn->lastInsertId();
+    }
 
 }

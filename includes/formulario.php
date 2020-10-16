@@ -12,7 +12,7 @@
         <div class="row">
             <div class="form-group col-sm">
                 <label>Fornecedor</label>
-                <select class="form-control" name="fornecedores[]">
+                <select class="form-control" name="fornecedores">
                     <option selected="" disabled="">Selecione</option>
                     <option value="teste">teste</option>
                 </select>
@@ -20,7 +20,7 @@
 
             <div class="form-group col-sm">
                 <label>Produto</label>
-                <select class="form-control" name="produtos[]">
+                <select class="form-control" name="produtos">
                     <option selected="" disabled="">Selecione Fornecedor Primeiro</option>
                     <option value="teste">teste</option>
                 </select>
@@ -28,7 +28,7 @@
 
             <div class="form-group col-sm">
                 <label>Preço</label>
-                <input type="text" class="form-control" name="precos[]">
+                <input type="number" class="form-control" name="precos">
             </div>
         </div>
         <div class="row">
