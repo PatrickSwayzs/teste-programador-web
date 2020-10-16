@@ -21,13 +21,13 @@ class Database{
      * Usuário do banco
      * @var string
      */
-    const USER = 'postgres';
+    const USER = 'root';
 
     /**
      * Senha de acesso do banco
      * @var string
      */
-    const PASS = 'masterkey';
+    const PASS = '';
 
     /**
      * Nome da tabela 
@@ -58,7 +58,7 @@ class Database{
      */
     private function setConnection(){
         try {
-            $this->conn = new PDO('pgsql:host='.self::HOST.'dbname='.self::NAME, self::USER, self::PASS);
+            $this->conn = new PDO('mysql:host='.self::HOST.';dbname='.self::NAME, self::USER, self::PASS);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
             die('ERRO: ' . $e->getMessage());

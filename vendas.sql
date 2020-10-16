@@ -20,9 +20,9 @@ Create Table produtos_fornecedores (
 
 Create Table vendas (
     id integer primary key,
-	produtos text [],
-	fornecedores text [],
-	preco text [],
+	produtos text,
+	fornecedores text,
+	preco text,
 	precoTotal varchar(255) not null,
 	cep varchar(255) not null,
 	uf varchar(255) not null, 

@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use App\Db\Database;
+
 class Venda {
 
     /**
@@ -79,7 +81,8 @@ class Venda {
         $this->data = date('Y-m-d H:i:s');
         
         //Inserir venda no banco
-
+        $obDatabase = new Database('vendas');
+        echo "<pre>"; print_r($obDatabase); echo "</pre>"; exit;
         //Atribuir o id da vaga na instancia
 
         //Retornar sucesso

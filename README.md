@@ -56,10 +56,10 @@ A aplicação pode ser feita em PHP puro ou você pode utilizar algum framework 
 
 ## Para usar o php usei o xampp (ultima versão disponivel) - para fazer o projeto funcionar só precisa colocar a pasta do projeto na pasta 'htdocs' do xampp e startar o Apache
 
-## Usei PostgreSQL como banco de dados, utilizando o pgAdim como workbench
+## Estava usando o PostgreSQL mas alterei para o Mysql por problemas de conexão, usei o Mysql que vem no xampp
 ## Os sqls para criar as tabelas e inserir dados no banco estão na raiz do projeto (venda.sql e inserts.sql)
-## Os dados do meu postgres eram: 
+## Os dados do mysql eram eram: 
        HOST = 'localhost' 
        NAME/DB = 'vendas'
-       USER = 'postgres'
-(senha)PASS = 'masterkey'
+       USER = 'root'
+(senha)PASS = ''
