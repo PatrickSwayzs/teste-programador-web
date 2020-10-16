@@ -77,6 +77,7 @@ class Venda {
     public function cadastrar(){
         //Definir data
         $this->data = date('Y-m-d H:i:s');
+        
         //Inserir venda no banco
 
         //Atribuir o id da vaga na instancia

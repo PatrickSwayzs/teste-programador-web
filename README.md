@@ -51,7 +51,15 @@ A aplicação pode ser feita em PHP puro ou você pode utilizar algum framework 
 * Usar testes unitários para qualquer parte do sistema;
 * Fazer commits claros, evidenciando o que realmente foi desenvolvido, pois seu código será revisado e validado por nossa equipe de desenvolvedores;
 
---
-## Para usar o php usei o xampp (ultima versão disponivel) 
+
+-- 
+
+## Para usar o php usei o xampp (ultima versão disponivel) - para fazer o projeto funcionar só precisa colocar a pasta do projeto na pasta 'htdocs' do xampp e startar o Apache
+
 ## Usei PostgreSQL como banco de dados, utilizando o pgAdim como workbench
-##
+## Os sqls para criar as tabelas e inserir dados no banco estão na raiz do projeto (venda.sql e inserts.sql)
+## Os dados do meu postgres eram: 
+       HOST = 'localhost' 
+       NAME/DB = 'vendas'
+       USER = 'postgres'
+(senha)PASS = 'masterkey'
