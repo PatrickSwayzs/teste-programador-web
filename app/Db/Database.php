@@ -123,4 +123,13 @@ class Database{
         return $this->execute($query);
     }
 
+    public function selectFornecedores(){
+
+        //monta a query
+        $query = "SELECT * FROM fornecedores WHERE id > 0 order by nome asc";
+
+        //executa a query
+        return $this->execute($query);
+    }
+
 }

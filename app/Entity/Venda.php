@@ -111,4 +111,10 @@ class Venda {
         return (new Database('vendas'))->select($where,$order)
                                        ->fetchAll(PDO::FETCH_CLASS, self::class);
     }
+
+    public static function getFornecedores(){
+        return (new Database('fornecedores'))->selectFornecedores()
+                                       ->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
