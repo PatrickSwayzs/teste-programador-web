@@ -50,3 +50,8 @@ A aplicação pode ser feita em PHP puro ou você pode utilizar algum framework 
 * Fazer a tela de venda responsiva (que se adapta a diferentes dispositivos);
 * Usar testes unitários para qualquer parte do sistema;
 * Fazer commits claros, evidenciando o que realmente foi desenvolvido, pois seu código será revisado e validado por nossa equipe de desenvolvedores;
+
+--
+## Para usar o php usei o xampp (ultima versão disponivel) 
+## Usei PostgreSQL como banco de dados, utilizando o pgAdim como workbench
+##

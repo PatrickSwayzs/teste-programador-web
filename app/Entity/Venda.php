@@ -70,4 +70,17 @@ class Venda {
      */
     public $data;
 
+    /**
+     * Método responsável por cadastrar uma nova venda
+     * @return boolean
+     */
+    public function cadastrar(){
+        //Definir data
+        $this->data = date('Y-m-d H:i:s');
+        //Inserir venda no banco
+
+        //Atribuir o id da vaga na instancia
+
+        //Retornar sucesso
+    }
 }
